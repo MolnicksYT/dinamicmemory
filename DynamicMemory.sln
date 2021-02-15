@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynamicMemory", "DynamicMemory\DynamicMemory.vcxproj", "{0752A330-D83F-4918-B161-9703127D6DB0}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "zadacha", "zadacha\zadacha.vcxproj", "{0BE89261-CF47-4845-A50F-6D3BFE5513EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{0752A330-D83F-4918-B161-9703127D6DB0}.Release|x64.Build.0 = Release|x64
 		{0752A330-D83F-4918-B161-9703127D6DB0}.Release|x86.ActiveCfg = Release|Win32
 		{0752A330-D83F-4918-B161-9703127D6DB0}.Release|x86.Build.0 = Release|Win32
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Debug|x64.ActiveCfg = Debug|x64
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Debug|x64.Build.0 = Debug|x64
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Debug|x86.ActiveCfg = Debug|Win32
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Debug|x86.Build.0 = Debug|Win32
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Release|x64.ActiveCfg = Release|x64
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Release|x64.Build.0 = Release|x64
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Release|x86.ActiveCfg = Release|Win32
+		{0BE89261-CF47-4845-A50F-6D3BFE5513EF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
