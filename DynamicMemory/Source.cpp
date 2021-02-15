@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 using namespace std;
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
@@ -9,7 +9,7 @@ void main()
 {
 	setlocale(LC_ALL, "");
 	int n;
-	cout << "Ââåñòè ðàçìåð ìàññèâà : ";cin >> n;
+	cout << "Ð’Ð²ÐµÑÑ‚Ð¸ Ñ€Ð°Ð·Ð¼ÐµÑ€ Ð¼Ð°ÑÑÐ¸Ð²Ð° : ";cin >> n;
 	int* arr = new int[n];
 	cout << arr << endl;
 	FillRand(arr, n);
@@ -24,13 +24,13 @@ void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		*(arr + i) = rand() % 100; //* - îïåðàòîð ðàçûìåíîâûâàåò è âîçâðàùàåò çíà÷åíèå ïî àäðåñó
+		*(arr + i) = rand() % 100; //* - Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ñ€Ð°Ð·Ñ‹Ð¼ÐµÐ½Ð¾Ð²Ñ‹Ð²Ð°ÐµÑ‚ Ð¸ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð°Ð´Ñ€ÐµÑÑƒ
 	}
 }
 void Print(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		cout << arr[i] << "\t"; //[] - îïåðàòîð èíäåêñèðîâàíèÿ âîçâðàùàåò çíà÷åíèå ïî èíäåêñó
+		cout << arr[i] << "\t"; //[] - Ð¾Ð¿ÐµÑ€Ð°Ñ‚Ð¾Ñ€ Ð¸Ð½Ð´ÐµÐºÑÐ¸Ñ€Ð¾Ð²Ð°Ð½Ð¸Ñ Ð²Ð¾Ð·Ð²Ñ€Ð°Ñ‰Ð°ÐµÑ‚ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ Ð¿Ð¾ Ð¸Ð½Ð´ÐµÐºÑÑƒ
 	}
 }
