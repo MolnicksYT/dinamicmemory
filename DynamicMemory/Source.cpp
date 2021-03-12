@@ -2,9 +2,9 @@
 using namespace std;
 template<typename T>T** Allocate(const int m, const int n);
 template<typename T>void Clear(T** arr, const int m);
-
-void FillRand(int* arr, const int n);
-void FillRand(int** arr, const int m, const int n);
+template<typename T>void Random(T & value);
+template<typename T>void FillRand(T* arr, const int n);
+template<typename T>void FillRand(T** arr, const int m, const int n);
 
 template<typename T>void Print(T arr[], const int n);
 template<typename T>void Print(T** arr, const int m, const int n);
@@ -58,7 +58,8 @@ void main()
 	int n; // столбцы3
 	cout << "Ввести кол-во строк: "; cin >> m;
 	cout << "Ввести кол-во столбцов: "; cin >> n; 
-	int** arr = Allocate<int>(m, n);
+	typedef float DataType;
+	DataType** arr = Allocate<DataType>(m, n);
 	//обращение к эл-там массива:
 	//FillRand(arr, m, n);
 	//Print(arr, m, n);
@@ -120,20 +121,32 @@ template<typename T>void Clear(T** arr, const int m)
 	}
 	delete[] arr;
 }
-void FillRand(int arr[], const int n)
+template<typename T>void Random(T& value)
+{
+	if (typeid(value) == typeid(float) || typeid(value) == typeid(double))
+		value = double(rand() % 10000) / 100;
+	else if (typeid(value) == typeid(char))
+		value = rand();
+	else
+		value = rand() % 100;
+}
+template<typename T>void FillRand(T* arr[], const int n)
 {
 	for (int i = 0; i < n; i++)
 	{
-		*(arr + i) = rand() % 100; //* - оператор разыменовывает и возвращает значение по адресу
+		//*(arr + i) = rand() % 100; //* - оператор разыменовывает и возвращает значение по адресу
+		Random(arr[i]);
 	}
 }
-void FillRand(int** arr, const int m, const int n)
+template<typename T>void FillRand(T** arr, const int m, const int n)
 {
+	Random(arr[0][0]);
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
 		{
-			arr[i][j] = rand() % 100;
+			//arr[i][j] = rand() % 100;
+			Random(arr[i][j]);
 		}
 	}
 }
@@ -260,7 +273,7 @@ template<typename T>T** push_row_back(T** arr, int& m, const int n)
 		delete[] arr;
 		
 		//4) создание последней строки массива:
-		buffer[m] = new int [n] {};
+		buffer[m] = new T [n] {};
 
 		//5) Увеличивание кол-во строк:
 		m++;
@@ -289,7 +302,7 @@ template<typename T>void push_col_back(T** arr, const int m, int& n)
 	for (int i = 0; i < m; i++)
 	{
 		//1) создание буферной строки
-		int* buffer = new int[n + 1]{};
+		T* buffer = new T[n + 1]{};
 		//2) копирование исход строки массива в буферную
 		for (int j = 0;j < n;j++)buffer[j] = arr[i][j];
 		//3) удаление исходной строки
